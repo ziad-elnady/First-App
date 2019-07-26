@@ -22,6 +22,9 @@ class ViewController: UIViewController {
         backgroundWelcScr.frame = view.frame;
         
     }
+    @IBAction func unwindFromSkillVC(unwindSeghue: UIStoryboardSegue) {
+    
+    }
 
 
 }
