@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class welcomeVC: UIViewController {
 
         
     @IBOutlet weak var swooshLogo: UIImageView!
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         backgroundWelcScr.frame = view.frame;
         
     }
-    @IBAction func unwindFromSkillVC(unwindSeghue: UIStoryboardSegue) {
+    @IBAction func unwindFromLeagueVC(unwindSeghue: UIStoryboardSegue) {
     
     }
 

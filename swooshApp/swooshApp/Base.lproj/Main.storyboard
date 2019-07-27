@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swooshApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="welcomeVC" customModule="swooshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="-49" y="146"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="qiv-Ys-Bx2">
             <objects>
-                <viewController id="Ids-5S-7ZU" sceneMemberID="viewController">
+                <viewController id="Ids-5S-7ZU" customClass="LeagueVC" customModule="swooshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ruB-yi-CUg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +176,7 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
-                                    <segue destination="GmU-eX-Cwi" kind="show" id="fdl-79-wBg"/>
+                                    <action selector="onTappedNext:" destination="Ids-5S-7ZU" eventType="touchUpInside" id="cFe-WE-GHd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fl-d1-04M">
@@ -184,7 +184,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="backButton"/>
                                 <connections>
-                                    <segue destination="qBp-PI-vVd" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSeghue:" id="pfC-P6-dXM"/>
+                                    <segue destination="qBp-PI-vVd" kind="unwind" unwindAction="unwindFromLeagueVCWithUnwindSeghue:" id="O7p-WF-O02"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -208,6 +208,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E6k-RH-jBL"/>
                     </view>
+                    <connections>
+                        <segue destination="GmU-eX-Cwi" kind="show" identifier="SkillVCShow" id="ST4-0G-Ll0"/>
+                    </connections>
                 </viewController>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find a team in your city &amp; dominate the league" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eK-dH-iCF">
                     <rect key="frame" x="0.0" y="0.0" width="306" height="59"/>
@@ -224,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="742.02898550724649" y="145.98214285714286"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="1sv-OW-TEh">
             <objects>
-                <viewController id="GmU-eX-Cwi" sceneMemberID="viewController">
+                <viewController id="GmU-eX-Cwi" customClass="SkillVC" customModule="swooshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ML-jt-S5E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,9 +306,21 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="FINISH"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcb-3N-dvJ">
+                                <rect key="frame" x="17" y="46" width="33" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="Pno-nu-pio"/>
+                                    <constraint firstAttribute="height" constant="24" id="pEP-TZ-O5p"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="hzA-Wk-4nF" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="m1I-R0-zln"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="qcb-3N-dvJ" firstAttribute="top" secondItem="5ML-jt-S5E" secondAttribute="top" constant="46" id="1Fj-At-djl"/>
                             <constraint firstItem="Smm-n5-Y5e" firstAttribute="leading" secondItem="CzL-lK-dL8" secondAttribute="leading" constant="17" id="2TB-PQ-jnM"/>
                             <constraint firstItem="Smm-n5-Y5e" firstAttribute="top" secondItem="1g9-9g-9dv" secondAttribute="bottom" constant="13" id="52h-yM-kAj"/>
                             <constraint firstItem="CzL-lK-dL8" firstAttribute="bottom" secondItem="L4b-Aw-OE2" secondAttribute="bottom" constant="18" id="8gz-xs-hwl"/>
@@ -317,6 +332,7 @@
                             <constraint firstItem="dOr-Ip-Isp" firstAttribute="top" secondItem="5ML-jt-S5E" secondAttribute="top" id="c6h-ai-L1v"/>
                             <constraint firstItem="L4b-Aw-OE2" firstAttribute="leading" secondItem="CzL-lK-dL8" secondAttribute="leading" constant="17" id="di9-HM-Nsf"/>
                             <constraint firstAttribute="bottom" secondItem="dOr-Ip-Isp" secondAttribute="bottom" id="ew3-Ko-1m8"/>
+                            <constraint firstItem="qcb-3N-dvJ" firstAttribute="leading" secondItem="CzL-lK-dL8" secondAttribute="leading" constant="17" id="fBI-ns-CeW"/>
                             <constraint firstItem="61j-pe-tOJ" firstAttribute="top" secondItem="5ML-jt-S5E" secondAttribute="top" constant="50" id="ge0-XG-XjW"/>
                             <constraint firstItem="Smm-n5-Y5e" firstAttribute="centerX" secondItem="5ML-jt-S5E" secondAttribute="centerX" id="iqH-AJ-Ow9"/>
                             <constraint firstItem="1g9-9g-9dv" firstAttribute="centerX" secondItem="5ML-jt-S5E" secondAttribute="centerX" id="nBi-Ft-a1c"/>
@@ -326,6 +342,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEy-V1-0tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hzA-Wk-4nF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1560.8695652173915" y="145.98214285714286"/>
         </scene>
